@@ -1,32 +1,32 @@
 //Run Server
-const express = require('express');
+import express from 'express';
+import 'dotenv/config'
+import {connectToDb} from './data/conn.js'
 const app = express();
 const port = 5050;
 const baseUrl = 'http://localhost:';
 
 //Dependencies
-const path = require('path');
-const store = require('store2');
-const multer = require('multer');
+import { join } from 'path';
+import store from 'store2';
+import multer from 'multer';
 
 //Utilities and middlewares
-const error = require('./src/middlewares/errorHandling.js');
-const {createNewUser} = require('./src/utilities/createNewUser.js')
-const {createNewPet} = require('./src/utilities/createNewPet.js')
+import error from './src/middlewares/errorHandling.js';
+import { createNewUser } from './src/utilities/createNewUser.js';
+import { createNewPet } from './src/utilities/createNewPet.js';
 
 //App settings
-app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(join(__dirname, '/public')));
+connectToDb()
 
 //Routes
-const usersRoutes = require('./src/routes/usersRoutes.js');
-const petsRoutes = require('./src/routes/petsRoutes.js');
-const addressRoutes = require('./src/routes/addressRoutes.js')
+import usersRoutes from './src/routes/usersRoutes.js';
+import petsRoutes from './src/routes/petsRoutes.js';
 app.use('/users', usersRoutes);
 app.use('/pets', petsRoutes);
-app.use('/api/address', addressRoutes)
 
 //Main app
 app.get('/', (req, res) => {
