@@ -5,7 +5,6 @@ import {getUsers,
     getOneUser,
     updateOneUser,
     addOnePetToUser,
-	getOnePetFromUser,
     deleteOneUser,
     findDates,
 	getPaymentsFromDates,
@@ -24,7 +23,6 @@ router
 
 router
 	.route('/:id/pets/:petId')
-	.get(getOnePetFromUser)
 	.patch(addOnePetToUser) //add pet information to user addOnePet
 
 router

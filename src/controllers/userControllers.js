@@ -89,6 +89,7 @@ async function deleteOneUser(req, res, next) {
 	next();
 }
 }
+
 async function addOnePetToUser(req, res, next) {
 	//example request: PATCH http://localhost:5050/users/api/<ONE USER ID HERE>/pets/<ONE PET ID HERE>
 	try{
@@ -105,7 +106,7 @@ async function addOnePetToUser(req, res, next) {
 	next(error(res.status, "Error adding pet to user"))
 }
 }
-async function getOnePetFromUser(req, res, next) {}
+
 async function findDates(req, res, next) {}
 async function getPaymentsFromDates(req, res, next) {}
 async function updatePayment(req, res, next) {}
@@ -117,7 +118,6 @@ export {
 	updateOneUser,
 	deleteOneUser,
 	addOnePetToUser,
-	getOnePetFromUser,
 	findDates,
 	getPaymentsFromDates,
 	updatePayment
