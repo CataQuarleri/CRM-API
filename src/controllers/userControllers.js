@@ -107,9 +107,8 @@ async function addOnePetToUser(req, res, next) {
 }
 }
 
-async function findDates(req, res, next) {}
-async function getPaymentsFromDates(req, res, next) {}
-async function updatePayment(req, res, next) {}
+async function addOneService(req, res, next) {}
+async function viewOneUserServices(req, res, next) {}
 
 export {
 	getUsers,
@@ -118,7 +117,6 @@ export {
 	updateOneUser,
 	deleteOneUser,
 	addOnePetToUser,
-	findDates,
-	getPaymentsFromDates,
-	updatePayment
+	addOneService,
+	viewOneUserServices
 };
