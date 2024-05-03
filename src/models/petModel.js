@@ -13,7 +13,7 @@ const petSchema = new Schema({
         {
               specialNeeds: String,
               routine: String,
-              trainingRouting: String,
+              trainingRoutine: String,
               fears: String,
               notes: String,
             },
@@ -57,10 +57,10 @@ const petSchema = new Schema({
         treats: [
           {
           daily: Boolean,
-          type: {
+          typeOfTreat: {
             brand: String,
-            type: String,
-            amount: [Number, String],
+            style: String,
+            amount: Number,
           }
         }],
         walks: {

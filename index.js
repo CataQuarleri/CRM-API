@@ -1,43 +1,42 @@
 //Run Server
 import express from 'express';
 import 'dotenv/config'
+import url from 'url';
+
+
 import {connectToDb} from './data/conn.js'
 const app = express();
 const port = 5050;
 const baseUrl = 'http://localhost:';
 
 //Dependencies
-import { join } from 'path';
-import store from 'store2';
-import multer from 'multer';
+import path, { join } from 'path';
 
 //Utilities and middlewares
-import error from './src/middlewares/errorHandling.js';
-import { createNewUser } from './src/utilities/createNewUser.js';
-import { createNewPet } from './src/utilities/createNewPet.js';
+import {error} from './src/middlewares/errorHandling.js';
+import { seedData } from './src/utilities/seedFunction.js';
 
 //App settings
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use(express.static(join(__dirname, '/public')));
-connectToDb()
+await connectToDb()
+await seedData()
 
 //Routes
 import usersRoutes from './src/routes/usersRoutes.js';
 import petsRoutes from './src/routes/petsRoutes.js';
-app.use('/users', usersRoutes);
-app.use('/pets', petsRoutes);
+import reviewsRoutes from './src/routes/reviewsRoutes.js';
+app.use('/pets/api', petsRoutes);
+app.use('/users/api', usersRoutes);
+app.use('/reviews/api', reviewsRoutes);
 
 //Main app
 app.get('/', (req, res) => {
-	createNewUser()
-  // createNewPet()
-	res.render('pages/home.ejs');
+res.send("im in home")
 });
-
-app.get('/success', (req, res) => {
-	res.send("You submitted the info correctly. We'll contact you shortly")
-})
 
 //Middlewares
 app.use((req, res, next) => {

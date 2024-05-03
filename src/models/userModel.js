@@ -1,10 +1,10 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Mixed } from 'mongoose';
 
 const userSchema = new Schema({
-            firstName: String,
-            lastName: String,
-            phone: String,
-            email: String,
+            firstName: {type: String, required: true},
+            lastName: {type: String, required: true},
+            phone: {type: String, required: true},
+            email: {type: String, required: true},
             otherContacts: [{
                 name: String,
                 phone: String,
@@ -18,7 +18,7 @@ const userSchema = new Schema({
                 type: String,
                 enum: ["Check In", "Day Care", "Overnight Care", "Planning a trip", "Dog Walks"]
             },
-            nextDates: {startingDate: Date, endDate: {
+            nextDates: {startingDate: {type: [Date, null, undefined]}, endDate: {
                 type: [String, Date, null, undefined]
             }},
             houseInstructions: String,
@@ -35,7 +35,10 @@ const userSchema = new Schema({
                     zip: String,
                     country: String,
                   },
-            pets: [ObjectId],
+            pets: [{
+                id: Mixed,
+                name: String
+            }],
             vetInfo: {
                     vet: String,
                     address: String,
