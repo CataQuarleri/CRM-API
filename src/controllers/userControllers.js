@@ -2,14 +2,10 @@ import User from '../models/userModel.js';
 import Pet from '../models/petModel.js';
 import {error} from '../middlewares/errorHandling.js'
 
-//Regex
-let phonePattern = '^[0-9]+$'; //I need the phone as a string so I use pattern instead of type number in input
-let emailPattern = '^[^@]+@[^@]+.[^@]+$';
-
 async function getUsers(req, res, next) {
 	try {
 			let select = '_id firstName lastName phone email service pets';
-			let allUsers = await User.find().select(select);
+			let allUsers = await User.find().select(select).limit(10).sort({email: 1});
 			res.send(allUsers);
 
 	} catch (er) {
@@ -33,8 +29,13 @@ async function createUser(req, res, next) {
 	let result = await newUser.save();
 	res.send(result)
 	}catch(e){
-		console.log("ERROR creating user: ", e)
-		next(error(res.status, "Error creating user"))
+		if (e.code === 11000) {
+			console.error('Email must be unique');
+			next()
+		  }else {
+			  console.log("ERROR creating user: ", e)			  
+			}
+			next(error(res.status, "Error creating user"))
 	}
 	//required fields:
 	// {
@@ -95,8 +96,12 @@ async function addOnePetToUser(req, res, next) {
 	try{
 	const onePet = await Pet.findOne({_id: req.params.petId}).select('_id name')
 	console.log("PET", onePet)
+
 	if(onePet){
-		const updateUser = await User.updateOne({_id: req.params.id}, {'$push': {pets: onePet}})
+
+		const updateUser = await User.findOneAndUpdate({_id: req.params.id}, {'$push': {pets: onePet}})
+		const updatePet = await Pet.updateOne({_id: req.params.petId}, {'$set': {parents: {id: updateUser._id, name: `${updateUser.firstName} ${updateUser.lastName}`, phone: updateUser.phone}}})
+		console.log("updatePet", updatePet)
 		res.send(updateUser)
 	}else{
 		next()
@@ -109,6 +114,7 @@ async function addOnePetToUser(req, res, next) {
 
 async function addOneService(req, res, next) {}
 async function viewOneUserServices(req, res, next) {}
+async function getUserByEmail(req, res, next) {}
 
 export {
 	getUsers,
@@ -116,6 +122,7 @@ export {
 	getOneUser,
 	updateOneUser,
 	deleteOneUser,
+	getUserByEmail,
 	addOnePetToUser,
 	addOneService,
 	viewOneUserServices

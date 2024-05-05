@@ -1,12 +1,12 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Mixed } from 'mongoose';
 
 const petType = ['Dog', 'Cat', 'Bird', 'Chicken', 'Farm Animal', 'Rabbit', 'Serpent/Reptile', 'Frogs/Amphibian', 'Small Rodent', 'Other']
 const petSchema = new Schema({
         name: {type:String,required:true,},
-        typeOfPet: {type: String, enum: petType},
+        typeOfPet: {type: String, enum: petType, required: true},
         breed: String,
         sex: String,
-        age: String,
+        yearOfBirth: {type: Number, required: true},
         microchipped: Boolean,
       
         behavior: 
@@ -18,12 +18,12 @@ const petSchema = new Schema({
               notes: String,
             },
         health: {
-          isMedicated: Boolean,
-          medicationInfo: [{
+          isMedicated: {type: Boolean, required: true},
+          medicationInfo: [{type: {
               typeOfMedication: String,
               amount: String,
               time: String,
-              details: String}],
+              details: String}}],
         },
         allergies: {
               hasAllergies: Boolean,
@@ -33,26 +33,28 @@ const petSchema = new Schema({
             },
         weightInPounds: Number,
         size: String,
-         needsFood: Boolean,
-         needsWalks: Boolean,
-         needsMedication: Boolean,
-        needs: String,
-        lastVetVisit: Date,
+        lastVetVisit: {type: Date},
         vaccines: [{
               date: Date,
               typeOfVaccine: String,
             }],
         food: {
-          frequency: Number,
+          frequency: {type: Number, required: true},
           foodAllergies: String,
           restrictions: String,
           notes: String,
-          meals: [{
-              meal: Number,
-              amount: Number,
+          meals: [{type: {
+              time: Mixed,
+              amount: Mixed,
               typeOfFood: String,
               brand: String,
-            }],
+            },
+          validate: {
+            validator: function(v){
+              return val.length == this.frequency
+            },
+            message: "There should be one meal for each frequency"
+          }}],
         },
         treats: [
           {
@@ -64,7 +66,7 @@ const petSchema = new Schema({
           }
         }],
         walks: {
-          needs: Boolean,
+          needs: {type: Boolean, required: true},
           amountDaily: Number,
           distanceInMiles: Number,
           timeInMinutes: Number,
@@ -75,7 +77,7 @@ const petSchema = new Schema({
         },
         toys: [String],
         relevantInformation: String,
-        parents: { id: Number, name: String, phone: String },
+        parents: { id: Mixed, name: String, phone: String },
         picture: String,
 })
 const Pet = model('pets', petSchema);
