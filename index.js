@@ -23,7 +23,7 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(join(__dirname, '/public')));
 await connectToDb()
-// await seedData()
+await seedData()
 
 //Routes
 import usersRoutes from './src/routes/usersRoutes.js';
