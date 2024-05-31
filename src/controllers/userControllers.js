@@ -34,24 +34,38 @@ async function signUp(req, res, next) {
 		  });
 	  
 		  if (newFirebaseUser) {
+			const newUser = new User({
+				email,
+				firstName,
+				phone,
+				_id: newFirebaseUser.uid
+			  })
+			  let result = await newUser.save()
 
-			await User.insertOne({
-			  email,
-			  firstName,
-			  phone,
-			  _id: newFirebaseUser.uid
-			});
+			// await User.insertOne({
+			//   email,
+			//   firstName,
+			//   phone,
+			//   _id: newFirebaseUser.uid
+			// });
 		  }
 		  return res
 			.status(200)
 			.json({ success: "Account created successfully. Please sign in." });
 		} catch (err) {
+			if (err.code === 11000) {
+				console.error('Email must be unique');
+				next(error(res.status, "User already exists"))
+			  }else {
+				  console.log("ERROR creating user: ", err)			  
+				}
+				next(error(res.status, "Error creating user"))
 		  if (err.code === "auth/email-already-exists") {
 			return res
 			  .status(400)
 			  .json({ error: "User account already exists at email address." });
 		  }
-		  return res.status(500).json({ error: "Server error. Please try again" });
+		  return res.status(500).json({ error: "Server error. Please try again", message: err });
 		}
 	  }
 }
@@ -69,37 +83,6 @@ async function updateUserProfile(req, res, next) {
 	} catch (error) {
 		next(error(res.status, 'Error updating user profile'))
 	}
-	// try{
-	// let body = req.body
-	// //set ID from firebase 
-	// const schemaPaths = Object.keys(User.schema.paths)
-	// 	for (const key in req.query){
-	// 		if(schemaPaths.includes(key)){
-	// 			const value = req.query[key]
-	// 			body[key] = value
-	// 		}else {
-	// 			console.log(`Key ${key} is not a valid property of the schema`)
-	// 		}
-	// 	}
-	// const newUser = new User(body)
-	// let result = await newUser.save();
-	// res.send(result)
-	// }catch(e){
-	// 	if (e.code === 11000) {
-	// 		console.error('Email must be unique');
-	// 		next()
-	// 	  }else {
-	// 		  console.log("ERROR creating user: ", e)			  
-	// 		}
-	// 		next(error(res.status, "Error creating user"))
-	// }
-	//required fields:
-	// {
-	// 	"firstName": "Lisa",
-	// 	"lastName": "Simpsons",
-	// 	"phone": "1233457647",
-	// 	"email": "lisa@gmail.com"
-	//   }
 }
 async function getOneUser(req, res, next) {
 	try {

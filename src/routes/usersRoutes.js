@@ -1,6 +1,5 @@
 import {Router as expressRouter} from 'express'
 import authenticate from '../middlewares/authenticate.js'
-import firebaseAdmin from '../auth/firebaseConfig.js'
 const router = expressRouter()
 import {getUsers,
     updateUserProfile,
@@ -30,6 +29,7 @@ router
 	.get(getOneUser) // select one user getOneUser
 	.patch(updateUserProfile)
 	.delete(deleteOneUser) //delete one user deleteOneUser
+	
 router.get("/:email", getUserByEmail)
 
 // router

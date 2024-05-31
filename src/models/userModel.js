@@ -82,6 +82,7 @@ relevantInformation: String,
 picture: String,
 }
 const userSchema = new Schema({
+  _id: String,
     firstName: {type: String, required: true},
     lastName: {type: String},
     phone: {type: String,

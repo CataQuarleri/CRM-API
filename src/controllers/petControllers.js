@@ -66,9 +66,6 @@ async function createNewPet (req, res, next){
     }catch(err){
         next(error(res.status, 'Error creating new pet'))
     }
-    /*Required fields
-    {"name": "Snowball III", "typeOfPet": "Cat", "yearOfBirth": 2010, "health.isMedicated": "false", "food.frequency": 1, "walks.needs": "false"}
-    */
 }
 
 async function updateOnePetProfile (req, res, next){
