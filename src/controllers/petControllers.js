@@ -1,15 +1,39 @@
-import Pet from '../models/petModel.js';
 import User from '../models/userModel.js';
 import {error} from '../middlewares/errorHandling.js'
 
 async function getPets (req, res, next){
     try {
-        let select = '_id name typeOfPet breed sex yearOfBirth needsFood needsWalks needsMedication parents';
-        let allPets = await Pet.find().select(select).limit(10).sort({typeOfPet: 1});
-        res.send(allPets);
+        let allPets = await User.aggregate([
+            {
+              '$unwind': {
+                'path': '$pets'
+              }
+            }, {
+              '$project': {
+                '_id': 0, 
+                'petId': '$pets._id', 
+                'petName': '$pets.name', 
+                'typeOfPet': '$pets.typeOfPet', 
+                'breed': '$pets.breed', 
+                'sex': '$pets.sex', 
+                'yearOfBirth': '$pets.yearOfBirth', 
+                'food': '$pets.food', 
+                'needsWalks': '$pets.walks.needs', 
+                'needsMedication': '$pets.health.isMedicated', 
+                'picture': '$pets.picture', 
+                'userId': '$_id', 
+                'parentName': {
+                  '$concat': [
+                    '$firstName', ' ', '$lastName'
+                  ]
+                }
+              }
+            }
+          ])
+          res.send(allPets)
 
 } catch (er) {
-    console.log('ERROR IN getPets:', e);
+    console.log('ERROR IN getPets:', er);
     next(error(res.status, "Error fetching pets information"));
 }
 }
@@ -48,9 +72,12 @@ async function createNewPet (req, res, next){
 async function findOnePet (req, res, next){
     try {
 		let id = req.params.id
-		let onePet = await Pet.findById({id})
-		res.send(onePet);
-
+		let onePet = await User.findOne({ "pets._id": id }, {"pets.$": 1})
+        if(onePet){
+            res.send(onePet.pets[0])
+        }else{
+            next(error(res.status, "No pet found with this ID"))
+        }
 } catch (e) {
 	console.log('ERROR IN findOnePet:', e);
 	next(error(res.status, "Error fetching pet information"));

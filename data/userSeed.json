@@ -40,14 +40,98 @@
 	  "country": "Cyprus"
 	},
 	"pets": [
-	  {
-		"id": 92433,
-		"name": "Rocky"
-	  },
-	  {
-		"id": 96983,
-		"name": "Luna"
-	  }
+		{
+			"name": "Hayden",
+			"typeOfPet": "Bird",
+			"breed": "Maine Coon",
+			"sex": "Male",
+			"yearOfBirth": 2013,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Anxiety",
+				"routine": "Bedtime story",
+				"trainingRoutine": "Agility training",
+				"fears": "fear of being left alone",
+				"notes": "enjoys cuddling"
+			},
+			"health": {
+				"isMedicated": true,
+				"medicationInfo": [{ "typeOfMedication": "Cream", "details": "apply a thin layer to affected area twice daily" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Morning" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "Pollen" },
+			"weightInPounds": 193,
+			"size": "Small",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [],
+			"food": {
+				"frequency": 4,
+				"meals": [
+					{ "time": "12:30 PM", "amount": "4 tablespoons", "typeOfFood": "Wet", "brand": "Happy Tails" },
+					{ "time": "8:00 AM", "amount": "7 pinches", "typeOfFood": "Dry", "brand": "Happy Tails" },
+					{ "time": "after a nap", "amount": "2 scoops", "typeOfFood": "Raw", "brand": "Healthy Paws" }
+				]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Biscuit", "amount": 5 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Tail Waggers", "style": "Jerky", "amount": 4 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Tail Waggers", "style": "Biscuit", "amount": 5 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Biscuit", "amount": 0 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Bone", "amount": 4 } }
+			],
+			"walks": { "needs": true, "amountDaily": 6, "distanceInMiles": 2.9, "timeInMinutes": 7, "route": "Neighborhood" },
+			"toys": ["Frisbee"],
+			"picture": "http://dummyimage.com/136x100.png/5fa2dd/ffffff"
+		},
+		{
+			"name": "Shellie",
+			"typeOfPet": "Cat",
+			"breed": "Cockatiel",
+			"sex": "Female",
+			"yearOfBirth": 2016,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Anxiety",
+				"routine": "Morning walk",
+				"trainingRoutine": "Clicker training session",
+				"fears": "fear of water",
+				"notes": "Playful and energetic"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Cream", "details": "apply a thin layer to affected area twice daily" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "Food" },
+			"weightInPounds": 156,
+			"size": "Medium",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" }
+			],
+			"food": {
+				"frequency": 5,
+				"meals": [
+					{ "time": "5:45 PM", "amount": "4 tablespoons", "typeOfFood": "Raw", "brand": "Healthy Paws" },
+					{ "time": "10:00 AM", "amount": "10 pieces", "typeOfFood": "Raw", "brand": "Healthy Paws" },
+					{ "time": "12:30 PM", "amount": "6 chunks", "typeOfFood": "Cooked", "brand": "Happy Tails" },
+					{ "time": "5:45 PM", "amount": "4 tablespoons", "typeOfFood": "Raw", "brand": "Pawsome Pets" },
+					{ "time": "12:30 PM", "amount": "2 scoops", "typeOfFood": "Cooked", "brand": "Pawsome Pets" }
+				]
+			},
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 0 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Tail Waggers", "style": "Jerky", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 1 } }
+			],
+			"walks": { "needs": false, "amountDaily": 4, "distanceInMiles": 5.9, "timeInMinutes": 49, "route": "Beach" },
+			"toys": ["Ball", "Frisbee"],
+			"picture": "http://dummyimage.com/109x100.png/5fa2dd/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Anna Kersley",
@@ -96,10 +180,49 @@
 	  "country": "Brazil"
 	},
 	"pets": [
-	  {
-		"id": 41858,
-		"name": "Charlie"
-	  }
+		{
+			"name": "Fons",
+			"typeOfPet": "Cat",
+			"breed": "Labradoodle",
+			"sex": "Male",
+			"yearOfBirth": 2011,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Separation Anxiety",
+				"routine": "Feeding time",
+				"trainingRoutine": "Socialization outing",
+				"fears": "fear of being left alone",
+				"notes": "Laid-back and relaxed"
+			},
+			"health": {
+				"isMedicated": true,
+				"medicationInfo": [{ "typeOfMedication": "Syrup", "details": "apply drops twice daily for a week" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Evening" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Environmental" },
+			"weightInPounds": 36,
+			"size": "Small",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }],
+			"food": {
+				"frequency": 1,
+				"meals": [
+					{ "time": "10:00 AM", "amount": "4 tablespoons", "typeOfFood": "Raw", "brand": "Pawsome Pets" },
+					{ "time": "3:15 PM", "amount": "6 chunks", "typeOfFood": "Cooked", "brand": "Healthy Paws" },
+					{ "time": "6:30 PM", "amount": "6 chunks", "typeOfFood": "Dry", "brand": "Healthy Paws" },
+					{ "time": "10:00 AM", "amount": "10 pieces", "typeOfFood": "Raw", "brand": "Pawsome Pets" },
+					{ "time": "6:30 PM", "amount": "3 handfuls", "typeOfFood": "Cooked", "brand": "Healthy Paws" }
+				]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Jerky", "amount": 2 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Jerky", "amount": 4 } }
+			],
+			"walks": { "needs": false, "amountDaily": 5, "distanceInMiles": 4.2, "timeInMinutes": 53, "route": "Beach" },
+			"toys": ["Ball"],
+			
+			"picture": "http://dummyimage.com/206x100.png/ff4444/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Eden Fishly",
@@ -157,10 +280,88 @@
 	  "country": "Nigeria"
 	},
 	"pets": [
-	  {
-		"id": 41869,
-		"name": "Bailey"
-	  }
+		{
+			"name": "Verney",
+			"typeOfPet": "Bird",
+			"breed": "Cockatiel",
+			"sex": "Male",
+			"yearOfBirth": 2016,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Fear of Thunderstorms",
+				"routine": "Training session",
+				"trainingRoutine": "Agility training",
+				"fears": "fear of clowns",
+				"notes": "loves to chase toys"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Pill", "details": "Used for skin infections" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Morning" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "Pollen" },
+			"weightInPounds": 137,
+			"size": "Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" }
+			],
+			"food": { "frequency": 1, "meals": [] },
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Bone", "amount": 2 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 2 } }
+			],
+			"walks": { "needs": false, "amountDaily": 1, "distanceInMiles": 7.4, "timeInMinutes": 18, "route": "Trail" },
+			"toys": ["Rope"],
+			"picture": "http://dummyimage.com/135x100.png/dddddd/000000"
+		},
+		{
+			"name": "Carmina",
+			"typeOfPet": "Bird",
+			"breed": "Rhode Island Red",
+			"sex": "Female",
+			"yearOfBirth": 2009,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Aggression",
+				"routine": "Visit to the vet",
+				"trainingRoutine": "Fetch training",
+				"fears": "fear of water",
+				"notes": "loves to chase toys"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Cream", "details": "give a treat with the medication twice daily" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Evening" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Dust" },
+			"weightInPounds": 175,
+			"size": "Medium",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Bordetella" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }
+			],
+			"food": {
+				"frequency": 1,
+				"meals": [{ "time": "after a walk", "amount": "10 pieces", "typeOfFood": "Wet", "brand": "Happy Tails" }]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Biscuit", "amount": 0 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Biscuit", "amount": 1 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Tail Waggers", "style": "Jerky", "amount": 3 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Biscuit", "amount": 3 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Chew", "amount": 2 } }
+			],
+			"walks": { "needs": true, "amountDaily": 1, "distanceInMiles": 8.0, "timeInMinutes": 44, "route": "Neighborhood" },
+			"toys": ["Frisbee", "Ball"],
+			"picture": "http://dummyimage.com/123x100.png/cc0000/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Riley Habron",
@@ -209,10 +410,88 @@
 	  "country": "Bulgaria"
 	},
 	"pets": [
-	  {
-		"id": 69090,
-		"name": "Cooper"
-	  }
+		{
+			"name": "Verney",
+			"typeOfPet": "Bird",
+			"breed": "Cockatiel",
+			"sex": "Male",
+			"yearOfBirth": 2016,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Fear of Thunderstorms",
+				"routine": "Training session",
+				"trainingRoutine": "Agility training",
+				"fears": "fear of clowns",
+				"notes": "loves to chase toys"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Pill", "details": "Used for skin infections" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Morning" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "Pollen" },
+			"weightInPounds": 137,
+			"size": "Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" }
+			],
+			"food": { "frequency": 1, "meals": [] },
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Bone", "amount": 2 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 2 } }
+			],
+			"walks": { "needs": false, "amountDaily": 1, "distanceInMiles": 7.4, "timeInMinutes": 18, "route": "Trail" },
+			"toys": ["Rope"],
+			"picture": "http://dummyimage.com/135x100.png/dddddd/000000"
+		},
+		{
+			"name": "Carmina",
+			"typeOfPet": "Bird",
+			"breed": "Rhode Island Red",
+			"sex": "Female",
+			"yearOfBirth": 2009,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Aggression",
+				"routine": "Visit to the vet",
+				"trainingRoutine": "Fetch training",
+				"fears": "fear of water",
+				"notes": "loves to chase toys"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Cream", "details": "give a treat with the medication twice daily" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Evening" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Dust" },
+			"weightInPounds": 175,
+			"size": "Medium",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Bordetella" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }
+			],
+			"food": {
+				"frequency": 1,
+				"meals": [{ "time": "after a walk", "amount": "10 pieces", "typeOfFood": "Wet", "brand": "Happy Tails" }]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Biscuit", "amount": 0 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Biscuit", "amount": 1 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Tail Waggers", "style": "Jerky", "amount": 3 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Biscuit", "amount": 3 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Chew", "amount": 2 } }
+			],
+			"walks": { "needs": true, "amountDaily": 1, "distanceInMiles": 8.0, "timeInMinutes": 44, "route": "Neighborhood" },
+			"toys": ["Frisbee", "Ball"],
+			"picture": "http://dummyimage.com/123x100.png/cc0000/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Elinore Samways",
@@ -270,14 +549,92 @@
 	  "country": "Costa Rica"
 	},
 	"pets": [
-	  {
-		"id": 75696,
-		"name": "Riley"
-	  },
-	  {
-		"id": 84972,
-		"name": "Riley"
-	  }
+		{
+			"name": "Lindy",
+			"typeOfPet": "Rabbit",
+			"breed": "Hamster",
+			"sex": "Male",
+			"yearOfBirth": 2008,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Anxiety",
+				"routine": "Visit to the vet",
+				"trainingRoutine": "Scent detection training",
+				"fears": "fear of being left alone",
+				"notes": "likes to explore new places"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Pill", "details": "give a treat with the medication twice daily" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Night" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Environmental" },
+			"weightInPounds": 146,
+			"size": "X-Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Bordetella" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }
+			],
+			"food": {
+				"frequency": 2,
+				"meals": [
+					{ "time": "9:45 AM", "amount": "8 slices", "typeOfFood": "Cooked", "brand": "Acme Pet Foods" },
+					{ "time": "3:15 PM", "amount": "7 pinches", "typeOfFood": "Raw", "brand": "Acme Pet Foods" },
+					{ "time": "6:30 PM", "amount": "2 scoops", "typeOfFood": "Raw", "brand": "Pawsome Pets" },
+					{ "time": "5:45 PM", "amount": "4 tablespoons", "typeOfFood": "Wet", "brand": "Pawsome Pets" }
+				]
+			},
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 0 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Biscuit", "amount": 3 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Happy Paws", "style": "Chew", "amount": 0 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Happy Paws", "style": "Bone", "amount": 1 } }
+			],
+			"walks": { "needs": true, "amountDaily": 10, "distanceInMiles": 8.1, "timeInMinutes": 27, "route": "Trail" },
+			"toys": ["Ball"],
+			"picture": "http://dummyimage.com/223x100.png/ff4444/ffffff"
+		},
+		{
+			"name": "Storm",
+			"typeOfPet": "Dog",
+			"breed": "Hamster",
+			"sex": "Female",
+			"yearOfBirth": 2009,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Separation Anxiety",
+				"routine": "Bedtime story",
+				"trainingRoutine": "Scent detection training",
+				"fears": "fear of being left alone",
+				"notes": "Curious and adventurous"
+			},
+			"health": {
+				"isMedicated": true,
+				"medicationInfo": [{ "typeOfMedication": "Pill", "details": "Used for skin infections" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "Dust" },
+			"weightInPounds": 192,
+			"size": "Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Bordetella" }],
+			"food": {
+				"frequency": 1,
+				"meals": [
+					{ "time": "12:30 PM", "amount": "4 tablespoons", "typeOfFood": "Raw", "brand": "Pawsome Pets" },
+					{ "time": "9:45 AM", "amount": "6 chunks", "typeOfFood": "Raw", "brand": "Pawsome Pets" }
+				]
+			},
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Happy Paws", "style": "Chew", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Jerky", "amount": 4 } }
+			],
+			"walks": { "needs": true, "amountDaily": 1, "distanceInMiles": 8.7, "timeInMinutes": 12, "route": "Beach" },
+			"toys": ["Frisbee", "Squeaky Toy"],
+			"picture": "http://dummyimage.com/231x100.png/5fa2dd/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Marcel Dowle",
@@ -326,14 +683,132 @@
 	  "country": "Indonesia"
 	},
 	"pets": [
-	  {
-		"id": 45988,
-		"name": "Zoe"
-	  },
-	  {
-		"id": 30040,
-		"name": "Buddy"
-	  }
+		{
+			"name": "Julee",
+			"typeOfPet": "Dog",
+			"breed": "Parakeet",
+			"sex": "Female",
+			"yearOfBirth": 2013,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Aggression",
+				"routine": "Playtime in the backyard",
+				"trainingRoutine": "Puzzle toy play",
+				"fears": "fear of balloons popping",
+				"notes": "Curious and adventurous"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Cream", "details": "Used for urinary tract infections" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Environmental" },
+			"weightInPounds": 145,
+			"size": "Medium",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" }],
+			"food": {
+				"frequency": 5,
+				"meals": [
+					{ "time": "9:45 AM", "amount": "8 slices", "typeOfFood": "Cooked", "brand": "Acme Pet Foods" },
+					{ "time": "after a nap", "amount": "5 pellets", "typeOfFood": "Dry", "brand": "Happy Tails" },
+					{ "time": "3:15 PM", "amount": "8 slices", "typeOfFood": "Wet", "brand": "Pawsome Pets" },
+					{ "time": "8:00 AM", "amount": "5 pellets", "typeOfFood": "Cooked", "brand": "Acme Pet Foods" }
+				]
+			},
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Chew", "amount": 2 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Jerky", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Biscuit", "amount": 0 } }
+			],
+			"walks": { "needs": false, "amountDaily": 5, "distanceInMiles": 3.3, "timeInMinutes": 20, "route": "Neighborhood" },
+			"toys": ["Squeaky Toy", "Ball"],
+			"picture": "http://dummyimage.com/133x100.png/ff4444/ffffff"
+		},
+		{
+			"name": "Lutero",
+			"typeOfPet": "Dog",
+			"breed": "Labradoodle",
+			"sex": "Male",
+			"yearOfBirth": 2009,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Separation Anxiety",
+				"routine": "Afternoon nap",
+				"trainingRoutine": "Puzzle toy play",
+				"fears": "fear of heights",
+				"notes": "Playful and energetic"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Injection", "details": "mix powder with food once a day" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Pollen" },
+			"weightInPounds": 177,
+			"size": "Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }
+			],
+			"food": {
+				"frequency": 1,
+				"meals": [{ "time": "after a nap", "amount": "6 chunks", "typeOfFood": "Cooked", "brand": "Happy Tails" }]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Biscuit", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Jerky", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Chew", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Chew", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Bone", "amount": 5 } }
+			],
+			"walks": { "needs": true, "amountDaily": 0, "distanceInMiles": 9.4, "timeInMinutes": 47, "route": "Beach" },
+			"toys": ["Ball"],
+			"picture": "http://dummyimage.com/233x100.png/dddddd/000000"
+		},
+		{
+			"name": "Bertrand",
+			"typeOfPet": "Cat",
+			"breed": "Cockatiel",
+			"sex": "Male",
+			"yearOfBirth": 2008,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Separation Anxiety",
+				"routine": "Morning walk",
+				"trainingRoutine": "Obstacle course practice",
+				"fears": "fear of clowns",
+				"notes": "Playful and energetic"
+			},
+			"health": { "isMedicated": true, "medicationInfo": [{ "typeOfMedication": "Cream", "details": "For anxiety" }] },
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "None" },
+			"weightInPounds": 107,
+			"size": "Small",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Bordetella" }
+			],
+			"food": {
+				"frequency": 0,
+				"meals": [
+					{ "time": "12:30 PM", "amount": "3 handfuls", "typeOfFood": "Cooked", "brand": "Healthy Paws" },
+					{ "time": "8:00 AM", "amount": "7 pinches", "typeOfFood": "Wet", "brand": "Healthy Paws" },
+					{ "time": "9:45 AM", "amount": "8 slices", "typeOfFood": "Cooked", "brand": "Pawsome Pets" },
+					{ "time": "after a nap", "amount": "1 cup", "typeOfFood": "Dry", "brand": "Happy Tails" },
+					{ "time": "5:45 PM", "amount": "4 tablespoons", "typeOfFood": "Wet", "brand": "Pawsome Pets" }
+				]
+			},
+			"treats": [{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 1 } }],
+			"walks": { "needs": false, "amountDaily": 3, "distanceInMiles": 7.4, "timeInMinutes": 48, "route": "Beach" },
+			"toys": ["Rope", "Squeaky Toy"],
+			"picture": "http://dummyimage.com/212x100.png/cc0000/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Sterling Raynham",
@@ -377,14 +852,132 @@
 	  "country": "Panama"
 	},
 	"pets": [
-	  {
-		"id": 91063,
-		"name": "Roxy"
-	  },
-	  {
-		"id": 13548,
-		"name": "Buddy"
-	  }
+		{
+			"name": "Julee",
+			"typeOfPet": "Dog",
+			"breed": "Parakeet",
+			"sex": "Female",
+			"yearOfBirth": 2013,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Aggression",
+				"routine": "Playtime in the backyard",
+				"trainingRoutine": "Puzzle toy play",
+				"fears": "fear of balloons popping",
+				"notes": "Curious and adventurous"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Cream", "details": "Used for urinary tract infections" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Environmental" },
+			"weightInPounds": 145,
+			"size": "Medium",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" }],
+			"food": {
+				"frequency": 5,
+				"meals": [
+					{ "time": "9:45 AM", "amount": "8 slices", "typeOfFood": "Cooked", "brand": "Acme Pet Foods" },
+					{ "time": "after a nap", "amount": "5 pellets", "typeOfFood": "Dry", "brand": "Happy Tails" },
+					{ "time": "3:15 PM", "amount": "8 slices", "typeOfFood": "Wet", "brand": "Pawsome Pets" },
+					{ "time": "8:00 AM", "amount": "5 pellets", "typeOfFood": "Cooked", "brand": "Acme Pet Foods" }
+				]
+			},
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Chew", "amount": 2 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Jerky", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Biscuit", "amount": 0 } }
+			],
+			"walks": { "needs": false, "amountDaily": 5, "distanceInMiles": 3.3, "timeInMinutes": 20, "route": "Neighborhood" },
+			"toys": ["Squeaky Toy", "Ball"],
+			"picture": "http://dummyimage.com/133x100.png/ff4444/ffffff"
+		},
+		{
+			"name": "Lutero",
+			"typeOfPet": "Dog",
+			"breed": "Labradoodle",
+			"sex": "Male",
+			"yearOfBirth": 2009,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Separation Anxiety",
+				"routine": "Afternoon nap",
+				"trainingRoutine": "Puzzle toy play",
+				"fears": "fear of heights",
+				"notes": "Playful and energetic"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Injection", "details": "mix powder with food once a day" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "Pollen" },
+			"weightInPounds": 177,
+			"size": "Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }
+			],
+			"food": {
+				"frequency": 1,
+				"meals": [{ "time": "after a nap", "amount": "6 chunks", "typeOfFood": "Cooked", "brand": "Happy Tails" }]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Biscuit", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Jerky", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Chew", "amount": 5 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Chew", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Pet Delights", "style": "Bone", "amount": 5 } }
+			],
+			"walks": { "needs": true, "amountDaily": 0, "distanceInMiles": 9.4, "timeInMinutes": 47, "route": "Beach" },
+			"toys": ["Ball"],
+			"picture": "http://dummyimage.com/233x100.png/dddddd/000000"
+		},
+		{
+			"name": "Bertrand",
+			"typeOfPet": "Cat",
+			"breed": "Cockatiel",
+			"sex": "Male",
+			"yearOfBirth": 2008,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Separation Anxiety",
+				"routine": "Morning walk",
+				"trainingRoutine": "Obstacle course practice",
+				"fears": "fear of clowns",
+				"notes": "Playful and energetic"
+			},
+			"health": { "isMedicated": true, "medicationInfo": [{ "typeOfMedication": "Cream", "details": "For anxiety" }] },
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": false, "typeOfAllergy": "None" },
+			"weightInPounds": 107,
+			"size": "Small",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Leptospirosis" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Bordetella" }
+			],
+			"food": {
+				"frequency": 0,
+				"meals": [
+					{ "time": "12:30 PM", "amount": "3 handfuls", "typeOfFood": "Cooked", "brand": "Healthy Paws" },
+					{ "time": "8:00 AM", "amount": "7 pinches", "typeOfFood": "Wet", "brand": "Healthy Paws" },
+					{ "time": "9:45 AM", "amount": "8 slices", "typeOfFood": "Cooked", "brand": "Pawsome Pets" },
+					{ "time": "after a nap", "amount": "1 cup", "typeOfFood": "Dry", "brand": "Happy Tails" },
+					{ "time": "5:45 PM", "amount": "4 tablespoons", "typeOfFood": "Wet", "brand": "Pawsome Pets" }
+				]
+			},
+			"treats": [{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 1 } }],
+			"walks": { "needs": false, "amountDaily": 3, "distanceInMiles": 7.4, "timeInMinutes": 48, "route": "Beach" },
+			"toys": ["Rope", "Squeaky Toy"],
+			"picture": "http://dummyimage.com/212x100.png/cc0000/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Mallissa Lawlings",
@@ -477,7 +1070,48 @@
 	  "country": "China"
 	},
 	"pets": [
-  
+		{
+			"name": "Waly",
+			"typeOfPet": "Bird",
+			"breed": "Golden Retriever",
+			"sex": "Female",
+			"yearOfBirth": 2014,
+			"microchipped": false,
+			"behavior": {
+				"specialNeeds": "Separation Anxiety",
+				"routine": "Evening cuddles",
+				"trainingRoutine": "Socialization outing",
+				"fears": "fear of heights",
+				"notes": "gets along well with other pets"
+			},
+			"health": {
+				"isMedicated": true,
+				"medicationInfo": [{ "typeOfMedication": "Injection", "details": "Used to treat allergies" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Night" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "Dust" },
+			"weightInPounds": 16,
+			"size": "Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "DHPP" }],
+			"food": {
+				"frequency": 0,
+				"meals": [
+					{ "time": "after playing fetch", "amount": "8 slices", "typeOfFood": "Wet", "brand": "Happy Tails" },
+					{ "time": "after a nap", "amount": "3 handfuls", "typeOfFood": "Dry", "brand": "Happy Tails" },
+					{ "time": "12:30 PM", "amount": "2 scoops", "typeOfFood": "Wet", "brand": "Acme Pet Foods" }
+				]
+			},
+			"treats": [
+				{ "daily": true, "typeOfTreat": { "brand": "Pet Delights", "style": "Jerky", "amount": 2 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 3 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Bone", "amount": 5 } }
+			],
+			"walks": { "needs": true, "amountDaily": 10, "distanceInMiles": 1.7, "timeInMinutes": 17, "route": "Trail" },
+			"toys": ["Rope", "Squeaky Toy"],
+			"picture": "http://dummyimage.com/236x100.png/ff4444/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Garrot Costellow",
@@ -530,7 +1164,95 @@
 	  "country": "Japan"
 	},
 	"pets": [
-  
+		{
+			"name": "Bonnee",
+			"typeOfPet": "Dog",
+			"breed": "Shetland Pony",
+			"sex": "Female",
+			"yearOfBirth": 2009,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Fear of Thunderstorms",
+				"routine": "Afternoon nap",
+				"trainingRoutine": "Agility training",
+				"fears": "fear of water",
+				"notes": "Curious and adventurous"
+			},
+			"health": {
+				"isMedicated": false,
+				"medicationInfo": [{ "typeOfMedication": "Syrup", "details": "give a treat with the medication twice daily" }]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "None" },
+			"weightInPounds": 183,
+			"size": "Large",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }
+			],
+			"food": {
+				"frequency": 4,
+				"meals": [
+					{ "time": "6:30 PM", "amount": "5 pellets", "typeOfFood": "Raw", "brand": "Acme Pet Foods" },
+					{ "time": "after a nap", "amount": "6 chunks", "typeOfFood": "Wet", "brand": "Healthy Paws" },
+					{ "time": "9:45 AM", "amount": "4 tablespoons", "typeOfFood": "Raw", "brand": "Healthy Paws" },
+					{ "time": "after a nap", "amount": "7 pinches", "typeOfFood": "Cooked", "brand": "Pawsome Pets" }
+				]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 5 } },
+				{ "daily": true, "typeOfTreat": { "brand": "Happy Paws", "style": "Jerky", "amount": 3 } }
+			],
+			"walks": { "needs": true, "amountDaily": 2, "distanceInMiles": 6.9, "timeInMinutes": 59, "route": "Beach" },
+			"toys": ["Ball", "Squeaky Toy"],
+			"picture": "http://dummyimage.com/207x100.png/dddddd/000000"
+		},
+		{
+			"name": "Pennie",
+			"typeOfPet": "Rabbit",
+			"breed": "Cockatiel",
+			"sex": "Non-binary",
+			"yearOfBirth": 2016,
+			"microchipped": true,
+			"behavior": {
+				"specialNeeds": "Anxiety",
+				"routine": "Evening cuddles",
+				"trainingRoutine": "Scent detection training",
+				"fears": "fear of the dark",
+				"notes": "likes to explore new places"
+			},
+			"health": {
+				"isMedicated": true,
+				"medicationInfo": [
+					{ "typeOfMedication": "Injection", "details": "apply a thin layer to affected area twice daily" }
+				]
+			},
+			"heatlh": { "medicationInfo": { "time": "Afternoon" } },
+			"allergies": { "hasAllergies": true, "typeOfAllergy": "Pollen" },
+			"weightInPounds": 138,
+			"size": "Medium",
+			"lastVetVisit": "2024-04-15T00:00:00Z",
+			"vaccines": [
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" },
+				{ "date": "2023-12-01T00:00:00Z", "typeOfVaccine": "Rabies" }
+			],
+			"food": {
+				"frequency": 2,
+				"meals": [
+					{ "time": "3:15 PM", "amount": "6 chunks", "typeOfFood": "Cooked", "brand": "Happy Tails" },
+					{ "time": "8:00 AM", "amount": "1 cup", "typeOfFood": "Raw", "brand": "Acme Pet Foods" }
+				]
+			},
+			"treats": [
+				{ "daily": false, "typeOfTreat": { "brand": "Pawsome Treats", "style": "Chew", "amount": 0 } },
+				{ "daily": false, "typeOfTreat": { "brand": "Tail Waggers", "style": "Bone", "amount": 3 } }
+			],
+			"walks": { "needs": true, "amountDaily": 4, "distanceInMiles": 4.0, "timeInMinutes": 33, "route": "Trail" },
+			"toys": ["Rope"],
+			"picture": "http://dummyimage.com/108x100.png/cc0000/ffffff"
+		}
 	],
 	"vetInfo": {
 	  "vet": "Ray Roon",
