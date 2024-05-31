@@ -6,7 +6,9 @@ import {getPets, createNewPet, findOnePet, updateOnePetProfile, onePetNeeds, upd
 router
 	.route('/')
 	.get(getPets)
-	.post(createNewPet)
+router
+	.route('/:userId')
+	.patch(createNewPet)
 
 router
 	.route('/:id')

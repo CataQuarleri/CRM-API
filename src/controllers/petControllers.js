@@ -38,36 +38,51 @@ async function getPets (req, res, next){
 }
 }
 async function createNewPet (req, res, next){
+    try{
+        let newPetData = req.body;
+    let userId = req.params.userId
+    let petParent = await User.updateOne({_id: userId}, {$push: {pets: newPetData}})
+    if(petParent.acknowledged){
+        res.status(200).send(`Pet added succesfully, pet id: ${petParent.upsertedId}`)
+    }else{
+        res.status(500).send(`Could not add Pet to parent`)
+    }
+    }catch(err){
+        next(error(res.status, 'Error creating new pet'))
+    }
+    
+
+
     /*Required fields
     {"name": "Snowball III", "typeOfPet": "Cat", "yearOfBirth": 2010, "health.isMedicated": "false", "food.frequency": 1, "walks.needs": "false"}
     */
    //optional query ?email=akersley0@patch.com
-    try{
-        let user;
-        let body = req.body
-            const schemaPaths = Object.keys(Pet.schema.paths)
-            if(req.query.parentsEmail){
+    // try{
+    //     let user;
+    //     let body = req.body
+    //         const schemaPaths = Object.keys(Pet.schema.paths)
+    //         if(req.query.parentsEmail){
             
-            }
-                for (const key in req.query){
-                    if(key == "parentsEmail"){
-                        user = await User.findOne({email: req.query[key]})
-                        body.parents = {id: user._id, name: `${user.firstName} ${user.lastName}`, phone: user.phone}
-                    }
-                    if(schemaPaths.includes(key)){
-                        const value = req.query[key]
-                        body[key] = value
-                    }else {
-                        console.log(`Key ${key} is not a valid property of the schema`)
-                    }
-                }
-            const newPet = new Pet(body)
-            let result = await newPet.save();
-            res.send(result)
-        }catch(e){    
-            console.log("ERROR creating pet: ", e)			  
-            next(error(res.status, "Error creating pet"))
-    }
+    //         }
+    //             for (const key in req.query){
+    //                 if(key == "parentsEmail"){
+    //                     user = await User.findOne({email: req.query[key]})
+    //                     body.parents = {id: user._id, name: `${user.firstName} ${user.lastName}`, phone: user.phone}
+    //                 }
+    //                 if(schemaPaths.includes(key)){
+    //                     const value = req.query[key]
+    //                     body[key] = value
+    //                 }else {
+    //                     console.log(`Key ${key} is not a valid property of the schema`)
+    //                 }
+    //             }
+    //         const newPet = new Pet(body)
+    //         let result = await newPet.save();
+    //         res.send(result)
+    //     }catch(e){    
+    //         console.log("ERROR creating pet: ", e)			  
+    //         next(error(res.status, "Error creating pet"))
+    // }
 }
 async function findOnePet (req, res, next){
     try {
