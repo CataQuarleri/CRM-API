@@ -37,6 +37,22 @@ async function getPets (req, res, next){
     next(error(res.status, "Error fetching pets information"));
 }
 }
+
+async function findOnePet (req, res, next){
+    try {
+		let id = req.params.petId
+		let onePet = await User.findOne({ "pets._id": id }, {"pets.$": 1})
+        if(onePet){
+            res.send(onePet.pets[0])
+        }else{
+            next(error(res.status, "No pet found with this ID"))
+        }
+} catch (e) {
+	console.log('ERROR IN findOnePet:', e);
+	next(error(res.status, "Error fetching pet information"));
+}
+}
+
 async function createNewPet (req, res, next){
     try{
         let newPetData = req.body;
@@ -50,75 +66,58 @@ async function createNewPet (req, res, next){
     }catch(err){
         next(error(res.status, 'Error creating new pet'))
     }
-    
-
-
     /*Required fields
     {"name": "Snowball III", "typeOfPet": "Cat", "yearOfBirth": 2010, "health.isMedicated": "false", "food.frequency": 1, "walks.needs": "false"}
     */
-   //optional query ?email=akersley0@patch.com
-    // try{
-    //     let user;
-    //     let body = req.body
-    //         const schemaPaths = Object.keys(Pet.schema.paths)
-    //         if(req.query.parentsEmail){
-            
-    //         }
-    //             for (const key in req.query){
-    //                 if(key == "parentsEmail"){
-    //                     user = await User.findOne({email: req.query[key]})
-    //                     body.parents = {id: user._id, name: `${user.firstName} ${user.lastName}`, phone: user.phone}
-    //                 }
-    //                 if(schemaPaths.includes(key)){
-    //                     const value = req.query[key]
-    //                     body[key] = value
-    //                 }else {
-    //                     console.log(`Key ${key} is not a valid property of the schema`)
-    //                 }
-    //             }
-    //         const newPet = new Pet(body)
-    //         let result = await newPet.save();
-    //         res.send(result)
-    //     }catch(e){    
-    //         console.log("ERROR creating pet: ", e)			  
-    //         next(error(res.status, "Error creating pet"))
-    // }
 }
-async function findOnePet (req, res, next){
-    try {
-		let id = req.params.id
-		let onePet = await User.findOne({ "pets._id": id }, {"pets.$": 1})
-        if(onePet){
-            res.send(onePet.pets[0])
-        }else{
-            next(error(res.status, "No pet found with this ID"))
-        }
-} catch (e) {
-	console.log('ERROR IN findOnePet:', e);
-	next(error(res.status, "Error fetching pet information"));
-}
-}
+
 async function updateOnePetProfile (req, res, next){
     try {
-		let id = req.params.id
-		let body = {}
-		const schemaPaths = Object.keys(Pet.schema.paths)
-        console.log("SHCEMA", schemaPaths)
-		for (const key in req.query){
-			if(schemaPaths.includes(key)){
-				const value = req.query[key]
-				body[key] = value
-			}else {
-				console.log(`Key ${key} is not a valid property of the schema`)
-			}
-		}
-		let updatedPet = await Pet.updateOne({_id: id}, body)
-		res.send(updatedPet);
+		let id = req.params.petId
+		let user = await User.findOne({ "pets._id": id })
+        
+        if(user){
+            let petToUpdate = user.pets.id(id)
+            if(petToUpdate){
+                for (const key in req.body){
+                    petToUpdate[key] = req.body[key]
+                }
+            }else{
+            next(error(res.status, "No pet found with this ID"))
+
+            }
+            
+            await user.save()
+            res.send(petToUpdate)
+        }else{
+            next(error(res.status, "User not found"))
+        }
 } catch (e) {
-	console.log('ERROR IN updateOnePet:', e);
-	next(error(res.status, "Error updating pet"));
+	console.log('ERROR IN updateOnePetProfile:', e);
+	next(error(res.status, "Error updating pet profile"));
 }
 }
+
+//     try {
+// 		let id = req.params.id
+// 		let body = {}
+// 		const schemaPaths = Object.keys(Pet.schema.paths)
+//         console.log("SHCEMA", schemaPaths)
+// 		for (const key in req.query){
+// 			if(schemaPaths.includes(key)){
+// 				const value = req.query[key]
+// 				body[key] = value
+// 			}else {
+// 				console.log(`Key ${key} is not a valid property of the schema`)
+// 			}
+// 		}
+// 		let updatedPet = await Pet.updateOne({_id: id}, body)
+// 		res.send(updatedPet);
+// } catch (e) {
+// 	console.log('ERROR IN updateOnePet:', e);
+// 	next(error(res.status, "Error updating pet"));
+// }
+// }
 
 async function onePetNeeds(req, res, next){
     try {

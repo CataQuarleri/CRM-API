@@ -11,7 +11,7 @@ router
 	.patch(createNewPet)
 
 router
-	.route('/:id')
+	.route('/onePet/:petId')
 	.get(findOnePet)
 	.patch(updateOnePetProfile)
 
