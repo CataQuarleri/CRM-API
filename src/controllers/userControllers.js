@@ -1,6 +1,8 @@
 import User from '../models/userModel.js';
 import Pet from '../models/petModel.js';
 import {error} from '../middlewares/errorHandling.js'
+import firebaseAdmin from '../auth/firebaseConfig.js'
+
 
 async function getUsers(req, res, next) {
 	try {
@@ -13,30 +15,84 @@ async function getUsers(req, res, next) {
 		next(error(res.status, "Error fetching users information"));
 	}
 }
-async function createUser(req, res, next) {
-	try{
-	let body = req.body
-	const schemaPaths = Object.keys(User.schema.paths)
-		for (const key in req.query){
-			if(schemaPaths.includes(key)){
-				const value = req.query[key]
-				body[key] = value
-			}else {
-				console.log(`Key ${key} is not a valid property of the schema`)
-			}
+
+async function signUp(req, res, next) {
+	{
+		const { email, firstName, password, phone } = req.body;
+	  
+		if (!email || !firstName || !password || !phone) {
+		  return res.status(400).json({
+			error:
+			  "Invalid request body. Must contain email, password, and firstName for user."
+		  });
 		}
-	const newUser = new User(body)
-	let result = await newUser.save();
-	res.send(result)
-	}catch(e){
-		if (e.code === 11000) {
-			console.error('Email must be unique');
-			next()
-		  }else {
-			  console.log("ERROR creating user: ", e)			  
-			}
-			next(error(res.status, "Error creating user"))
+	  
+		try {
+		  const newFirebaseUser = await firebaseAdmin.auth.createUser({
+			email,
+			password
+		  });
+	  
+		  if (newFirebaseUser) {
+
+			await User.insertOne({
+			  email,
+			  firstName,
+			  phone,
+			  _id: newFirebaseUser.uid
+			});
+		  }
+		  return res
+			.status(200)
+			.json({ success: "Account created successfully. Please sign in." });
+		} catch (err) {
+		  if (err.code === "auth/email-already-exists") {
+			return res
+			  .status(400)
+			  .json({ error: "User account already exists at email address." });
+		  }
+		  return res.status(500).json({ error: "Server error. Please try again" });
+		}
+	  }
+}
+
+async function updateUserProfile(req, res, next) {
+	try {
+		let userProfile = req.body;
+		let id = req.params.id
+		let userToUpdate = await User.updateOne({_id: id}, userProfile)
+		if(userToUpdate.acknowledged){
+			res.status(200).send('User updated succesfully')
+		}else {
+			res.status(500).send('Could not update user profile')
+		}
+	} catch (error) {
+		next(error(res.status, 'Error updating user profile'))
 	}
+	// try{
+	// let body = req.body
+	// //set ID from firebase 
+	// const schemaPaths = Object.keys(User.schema.paths)
+	// 	for (const key in req.query){
+	// 		if(schemaPaths.includes(key)){
+	// 			const value = req.query[key]
+	// 			body[key] = value
+	// 		}else {
+	// 			console.log(`Key ${key} is not a valid property of the schema`)
+	// 		}
+	// 	}
+	// const newUser = new User(body)
+	// let result = await newUser.save();
+	// res.send(result)
+	// }catch(e){
+	// 	if (e.code === 11000) {
+	// 		console.error('Email must be unique');
+	// 		next()
+	// 	  }else {
+	// 		  console.log("ERROR creating user: ", e)			  
+	// 		}
+	// 		next(error(res.status, "Error creating user"))
+	// }
 	//required fields:
 	// {
 	// 	"firstName": "Lisa",
@@ -57,29 +113,7 @@ async function getOneUser(req, res, next) {
 	next(error(res.status, "Error fetching user information"));
 }
 }
-async function updateOneUser(req, res, next) {
-	//example request: PATCH http://localhost:5050/users/api/<ONE ID HERE>?firstName=Homer&lastName=Simpson&inexistingPath=asasgasf
-	try {
-		let id = req.params.id
-		let body = {}
-		const schemaPaths = Object.keys(User.schema.paths)
-		console.log("SCHEMA", schemaPaths)
-		for (const key in req.query){
-			if(schemaPaths.includes(key)){
-				const value = req.query[key]
-				body[key] = value
-			}else {
-				console.log(`Key ${key} is not a valid property of the schema`)
-			}
-		}
-		console.log("BODY", body)
-		let updatedUser = await User.updateOne({_id: id}, body)
-		res.send(updatedUser);
-} catch (e) {
-	console.log('ERROR IN updateOneUser:', e);
-	next(error(res.status, "Error updating user"));
-}
-}
+
 async function deleteOneUser(req, res, next) {
 	try {
 		let id = req.params.id
@@ -118,12 +152,12 @@ async function getUserByEmail(req, res, next) {}
 
 export {
 	getUsers,
-	createUser,
+	updateUserProfile,
 	getOneUser,
-	updateOneUser,
 	deleteOneUser,
 	getUserByEmail,
 	addOnePetToUser,
 	addOneService,
-	viewOneUserServices
+	viewOneUserServices,
+	signUp
 };

@@ -3,11 +3,11 @@ let phonePattern = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
 let emailPattern = /^[^@]+@[^@]+.[^@]+$/;
 const petType = ['Dog', 'Cat', 'Bird', 'Chicken', 'Farm Animal', 'Rabbit', 'Serpent/Reptile', 'Frogs/Amphibian', 'Small Rodent', 'Other']
 
-let petSchema = { name: {type:String,required:true,},
-typeOfPet: {type: String, enum: petType, required: true},
+let petSchema = { name: {type:String},
+typeOfPet: {type: String, enum: petType},
 breed: String,
 sex: String,
-yearOfBirth: {type: Number, required: true},
+yearOfBirth: {type: Number},
 microchipped: Boolean,
 
 behavior: 
@@ -19,7 +19,7 @@ behavior:
       notes: String,
     },
 health: {
-  isMedicated: {type: Boolean, required: true},
+  isMedicated: {type: Boolean},
   medicationInfo: [{type: {
       typeOfMedication: String,
       amount: String,
@@ -40,7 +40,7 @@ vaccines: [{
       typeOfVaccine: String,
     }],
 food: {
-  frequency: {type: Number, required: true},
+  frequency: {type: Number},
   foodAllergies: String,
   restrictions: String,
   notes: String,
@@ -67,7 +67,7 @@ treats: [
   }
 }],
 walks: {
-  needs: {type: Boolean, required: true},
+  needs: {type: Boolean},
   amountDaily: Number,
   distanceInMiles: Number,
   timeInMinutes: Number,
@@ -83,7 +83,7 @@ picture: String,
 }
 const userSchema = new Schema({
     firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
+    lastName: {type: String},
     phone: {type: String,
         validate: {
         validator: function(v) {

@@ -1,6 +1,6 @@
 import {Router as expressRouter} from 'express'
 const router = expressRouter()
-import {getPets, createNewPet, findOnePet, updateOnePetProfile, onePetNeeds, updateOnePetNeeds} from '../controllers/petControllers.js'
+import {getPets, createNewPet, findOnePet, updateOnePetProfile} from '../controllers/petControllers.js'
 
 //Will eventually use populate() to get parents info in one click
 router
@@ -15,10 +15,10 @@ router
 	.get(findOnePet)
 	.patch(updateOnePetProfile)
 
-router
-	.route('/:id/needs') 
-	.get(onePetNeeds)
-	.patch(updateOnePetNeeds)// required queries: ?meal=true || ?medication=true
+// router
+// 	.route('/:id/needs') 
+// 	.get(onePetNeeds)
+// 	.patch(updateOnePetNeeds)// required queries: ?meal=true || ?medication=true
 	// .delete(deleteOnePetNeed) // required queries: ?meal=MEAL-ID || ?medication=MEDICATION-ID **NOT WORKING YET**
 
 	

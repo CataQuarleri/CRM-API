@@ -98,60 +98,39 @@ async function updateOnePetProfile (req, res, next){
 }
 }
 
+// async function onePetNeeds(req, res, next){
+//     try {
+// 		let _id = req.params.id
+// 		let onePet = await Pet.findById({_id}, '_id name food health walks')
+// 		res.send(onePet);
+
+// } catch (e) {
+// 	console.log('ERROR IN onePetNeeds:', e);
+// 	next(error(res.status, "Error fetching pet needs information"));
+// }
+// }
+// async function updateOnePetNeeds(req, res, next){
 //     try {
 // 		let id = req.params.id
-// 		let body = {}
-// 		const schemaPaths = Object.keys(Pet.schema.paths)
-//         console.log("SHCEMA", schemaPaths)
-// 		for (const key in req.query){
-// 			if(schemaPaths.includes(key)){
-// 				const value = req.query[key]
-// 				body[key] = value
-// 			}else {
-// 				console.log(`Key ${key} is not a valid property of the schema`)
-// 			}
-// 		}
-// 		let updatedPet = await Pet.updateOne({_id: id}, body)
-// 		res.send(updatedPet);
+// 		if(req.query.addMeal){
+//             let body = req.body
+//             /*example:
+//             {"time": "morning", "amount": "1 cup", "typeOfFood": "Raw", "brand": "Homemade"} */
+//             const newMeal = await Pet.updateOne({_id: id}, {$addToSet: {"food.meals": body}}).exec()
+//             console.log("new meal", newMeal)
+//             res.send(newMeal)
+//         }else if(req.query.addMedication){
+//             let body = req.body
+//             /*example:
+//             {"typeOfMedication": "Injection", "details": "To lower pain"} */
+//             const newMedication = await Pet.updateOne({_id: id}, {$push: {"health.medicationInfo": body}}).exec()
+//             res.send(newMedication)
+//         }
 // } catch (e) {
-// 	console.log('ERROR IN updateOnePet:', e);
-// 	next(error(res.status, "Error updating pet"));
+// 	console.log('ERROR IN findOnePet:', e);
+// 	next(error(res.status, "Error fetching pet information"));
 // }
 // }
-
-async function onePetNeeds(req, res, next){
-    try {
-		let _id = req.params.id
-		let onePet = await Pet.findById({_id}, '_id name food health walks')
-		res.send(onePet);
-
-} catch (e) {
-	console.log('ERROR IN onePetNeeds:', e);
-	next(error(res.status, "Error fetching pet needs information"));
-}
-}
-async function updateOnePetNeeds(req, res, next){
-    try {
-		let id = req.params.id
-		if(req.query.addMeal){
-            let body = req.body
-            /*example:
-            {"time": "morning", "amount": "1 cup", "typeOfFood": "Raw", "brand": "Homemade"} */
-            const newMeal = await Pet.updateOne({_id: id}, {$addToSet: {"food.meals": body}}).exec()
-            console.log("new meal", newMeal)
-            res.send(newMeal)
-        }else if(req.query.addMedication){
-            let body = req.body
-            /*example:
-            {"typeOfMedication": "Injection", "details": "To lower pain"} */
-            const newMedication = await Pet.updateOne({_id: id}, {$push: {"health.medicationInfo": body}}).exec()
-            res.send(newMedication)
-        }
-} catch (e) {
-	console.log('ERROR IN findOnePet:', e);
-	next(error(res.status, "Error fetching pet information"));
-}
-}
 // async function deleteOnePetNeed(req, res, next){
 //     try {
 // 		let id = req.params.id
@@ -177,4 +156,4 @@ async function updateOnePetNeeds(req, res, next){
 // }
 // }
 
-export {getPets, createNewPet, findOnePet, updateOnePetProfile, onePetNeeds, updateOnePetNeeds}
+export {getPets, createNewPet, findOnePet, updateOnePetProfile}

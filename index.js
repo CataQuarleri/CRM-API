@@ -2,6 +2,7 @@
 import express from 'express';
 import 'dotenv/config'
 import url from 'url';
+import cors from 'cors'
 
 
 import {connectToDb} from './data/conn.js'
@@ -17,6 +18,13 @@ import {error} from './src/middlewares/errorHandling.js';
 import { seedData } from './src/utilities/seedFunction.js';
 
 //App settings
+app.use(
+  cors({
+    origin: [baseUrl + process.env.PORT],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const __filename = url.fileURLToPath(import.meta.url);
