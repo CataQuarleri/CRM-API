@@ -41,13 +41,7 @@ async function signUp(req, res, next) {
 				_id: newFirebaseUser.uid
 			  })
 			  let result = await newUser.save()
-
-			// await User.insertOne({
-			//   email,
-			//   firstName,
-			//   phone,
-			//   _id: newFirebaseUser.uid
-			// });
+			  console.log("RESULT", result)
 		  }
 		  return res
 			.status(200)
@@ -68,6 +62,9 @@ async function signUp(req, res, next) {
 		  return res.status(500).json({ error: "Server error. Please try again", message: err });
 		}
 	  }
+}
+async function login(req, res, next) {
+	
 }
 
 async function updateUserProfile(req, res, next) {

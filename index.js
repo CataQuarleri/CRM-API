@@ -7,7 +7,7 @@ import cors from 'cors'
 
 import {connectToDb} from './data/conn.js'
 const app = express();
-const port = 5050;
+const port = process.env.PORT;
 const baseUrl = 'http://localhost:';
 
 //Dependencies
