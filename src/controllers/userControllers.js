@@ -32,9 +32,9 @@ async function signUp(req, res, next) {
 			email,
 			password
 		  });
-	  
+		  let newUser = {}
 		  if (newFirebaseUser) {
-			const newUser = new User({
+			 newUser = new User({
 				email,
 				firstName,
 				phone,
@@ -45,7 +45,7 @@ async function signUp(req, res, next) {
 		  }
 		  return res
 			.status(200)
-			.json({ success: "Account created successfully. Please sign in." });
+			.json({ success: "Account created successfully. Please sign in.", user: newUser });
 		} catch (err) {
 			if (err.code === 11000) {
 				console.error('Email must be unique');
@@ -64,12 +64,13 @@ async function signUp(req, res, next) {
 	  }
 }
 async function login(req, res, next) {
-	
+
 }
 
 async function updateUserProfile(req, res, next) {
 	try {
 		let userProfile = req.body;
+		console.log("USER PROFILE", userProfile)
 		let id = req.params.id
 		let userToUpdate = await User.updateOne({_id: id}, userProfile)
 		if(userToUpdate.acknowledged){
@@ -84,9 +85,10 @@ async function updateUserProfile(req, res, next) {
 async function getOneUser(req, res, next) {
 	try {
 		let id = req.params.id
-		let select = '_id firstName lastName phone email service pets';
-		let oneUser = await User.findOne({_id: id}).select(select);
-		res.send(oneUser);
+		// let select = '_id firstName lastName phone email service pets';
+		let oneUser = await User.findOne({_id: id});
+		console.log("ONE USER", oneUser)
+		res.status(200).json(oneUser);
 
 } catch (e) {
 	console.log('ERROR IN getOneUser:', e);
