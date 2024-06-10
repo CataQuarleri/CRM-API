@@ -27,7 +27,7 @@ router.post('/signUp', signUp)
 router
 	.route('/:id')
 	.get(getOneUser) // select one user getOneUser
-	.patch(updateUserProfile)
+	.put(updateUserProfile)
 	.delete(deleteOneUser) //delete one user deleteOneUser
 	
 router.get("/:email", getUserByEmail)

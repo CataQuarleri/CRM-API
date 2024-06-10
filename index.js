@@ -20,11 +20,11 @@ import { seedData } from './src/utilities/seedFunction.js';
 //App settings
 app.use(
   cors(
-  //   {
-  //   origin: [baseUrl + process.env.PORT],
-  //   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  //   credentials: true,
-  // }
+    {
+    origin: [baseUrl + process.env.PORT],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  }
 )
 );
 app.use(express.json());
