@@ -78,7 +78,8 @@ async function updateUserProfile(req, res, next) {
 		}else {
 			res.status(500).send('Could not update user profile')
 		}
-	} catch (error) {
+	} catch (err) {
+		console.log("ERROR UPDATING USER", err)
 		next(error(res.status, 'Error updating user profile'))
 	}
 }

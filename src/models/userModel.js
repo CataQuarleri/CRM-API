@@ -118,17 +118,18 @@ const userSchema = new Schema({
     }],
     houseInstructions: String,
     address: {
-            id: Number,
+            // id: Number,
             coordinates: [Number, Number],
-            typeOfAddress: {
-                type: String,
-                enum: ["Parents House", "DayCare", "Friend or relative", "Work" ]
-            },
-            street: String,
-            city: String,
-            state: String,
-            zip: String,
-            country: String,
+            addressLine: String,
+            // typeOfAddress: {
+            //     type: String,
+            //     enum: ["Parents House", "DayCare", "Friend or relative", "Work" ]
+            // },
+            // street: String,
+            // city: String,
+            // state: String,
+            // zip: String,
+            // country: String,
           },
     pets: [
         petSchema

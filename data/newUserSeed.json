@@ -1,0 +1,864 @@
+[
+    {
+        "_id": "k0qDSRDZH0VUWomQRWoa7gX1XY12",
+      "firstName": "John",
+      "lastName": "Doe",
+      "phone": "+1 (555) 123-4567",
+      "email": "johndoe@gmail.com",
+      "otherContacts": [
+        {
+          "name": "Jane Smith",
+          "phone": "+1 (555) 765-4321",
+          "email": "jane.smith@example.com"
+        }
+      ],
+      "contactPreference": "Email",
+      "services": [
+        {
+          "status": "Completed",
+          "service": "Day Care",
+          "dates": {
+            "start": "2023-01-01T08:00:00Z",
+            "end": "2023-01-01T18:00:00Z"
+          },
+          "paymentAmount": 100,
+          "paymentMethod": "Card"
+        }
+      ],
+      "houseInstructions": "Please water the plants and take out the trash.",
+      "address": {
+        "coordinates": [40.7128, -74.0060],
+        "addressLine": "123 Main St, New York, NY 10001"
+      },
+      "pets": [
+        {
+          "name": "Buddy",
+          "typeOfPet": "Dog",
+          "breed": "Golden Retriever",
+          "sex": "Male",
+          "yearOfBirth": 2018,
+          "microchipped": true,
+          "behavior": {
+            "specialNeeds": "None",
+            "routine": "Morning and evening walks",
+            "trainingRoutine": "Basic obedience",
+            "fears": "Loud noises",
+            "notes": "Friendly and playful"
+          },
+          "health": {
+            "isMedicated": true,
+            "medicationInfo": [
+              {
+                "typeOfMedication": "Pain relief",
+                "amount": "1 tablet",
+                "time": "Morning",
+                "details": "After breakfast"
+              }
+            ]
+          },
+          "allergies": {
+            "hasAllergies": true,
+            "typeOfAllergy": "Peanut",
+            "careInstructions": "Avoid peanut-based treats",
+            "additionalInfo": "Watch for signs of allergic reactions"
+          },
+          "weightInPounds": 65,
+          "size": "Large",
+          "lastVetVisit": "2023-06-01T00:00:00Z",
+          "vaccines": [
+            {
+              "date": "2023-01-01T00:00:00Z",
+              "typeOfVaccine": "Rabies"
+            }
+          ],
+          "food": {
+            "frequency": 2,
+            "foodAllergies": "None",
+            "restrictions": "No table scraps",
+            "notes": "Prefers dry food",
+            "meals": [
+              {
+                "time": "08:00",
+                "amount": "1 cup",
+                "typeOfFood": "Dry",
+                "brand": "Brand A"
+              },
+              {
+                "time": "18:00",
+                "amount": "1 cup",
+                "typeOfFood": "Dry",
+                "brand": "Brand A"
+              }
+            ]
+          },
+          "treats": [
+            {
+              "daily": true,
+              "typeOfTreat": {
+                "brand": "Brand B",
+                "style": "Chewy",
+                "amount": 2
+              }
+            }
+          ],
+          "walks": {
+            "needs": true,
+            "amountDaily": 2,
+            "distanceInMiles": 3,
+            "timeInMinutes": 60,
+            "route": "Park",
+            "preferences": "Loves playing fetch",
+            "habits": "Sniffs everything",
+            "details": "Avoid busy streets"
+          },
+          "toys": ["Ball", "Rope"],
+          "relevantInformation": "Prefers quiet environments",
+          "picture": "path/to/picture.jpg"
+        }
+      ],
+      "vetInfo": {
+        "vet": "Dr. Smith",
+        "address": "456 Vet St, New York, NY 10001",
+        "website": "http://www.vetclinic.com",
+        "phone": "+1 (555) 987-6543"
+      },
+      "emergencyContact": {
+        "name": "Emily Johnson",
+        "relation": "Neighbor",
+        "phone": "+1 (555) 654-3210"
+      },
+      "_baseRate": 50,
+      "_lastVisit": "2023-06-01T00:00:00Z",
+      "_notes": "Very satisfied with the service"
+    },
+    {
+        "_id": "zL3UyvqHkWVtkJAdh85hiEdmrDS2",
+      "firstName": "Alice",
+      "lastName": "Brown",
+      "phone": "+1 (555) 234-5678",
+      "email": "alicebrown@gmail.com",
+      "otherContacts": [
+        {
+          "name": "Tom White",
+          "phone": "+1 (555) 876-5432",
+          "email": "tom.white@example.com"
+        }
+      ],
+      "contactPreference": "Phone Call",
+      "services": [
+        {
+          "status": "Pending",
+          "service": "Overnight Care",
+          "dates": {
+            "start": "2023-02-15T18:00:00Z",
+            "end": "2023-02-16T08:00:00Z"
+          },
+          "paymentAmount": 150,
+          "paymentMethod": "Venmo"
+        }
+      ],
+      "houseInstructions": "Leave the mail on the kitchen table.",
+      "address": {
+        "coordinates": [34.0522, -118.2437],
+        "addressLine": "456 Elm St, Los Angeles, CA 90001"
+      },
+      "pets": [
+        {
+          "name": "Whiskers",
+          "typeOfPet": "Cat",
+          "breed": "Siamese",
+          "sex": "Female",
+          "yearOfBirth": 2016,
+          "microchipped": false,
+          "behavior": {
+            "specialNeeds": "None",
+            "routine": "Evening playtime",
+            "trainingRoutine": "Litter trained",
+            "fears": "Strangers",
+            "notes": "Independent but affectionate"
+          },
+          "health": {
+            "isMedicated": false,
+            "medicationInfo": []
+          },
+          "allergies": {
+            "hasAllergies": false,
+            "typeOfAllergy": "",
+            "careInstructions": "",
+            "additionalInfo": ""
+          },
+          "weightInPounds": 10,
+          "size": "Medium",
+          "lastVetVisit": "2023-03-01T00:00:00Z",
+          "vaccines": [
+            {
+              "date": "2023-02-01T00:00:00Z",
+              "typeOfVaccine": "Feline Leukemia"
+            }
+          ],
+          "food": {
+            "frequency": 3,
+            "foodAllergies": "None",
+            "restrictions": "No dairy",
+            "notes": "Prefers wet food",
+            "meals": [
+              {
+                "time": "08:00",
+                "amount": "1/2 can",
+                "typeOfFood": "Wet",
+                "brand": "Brand X"
+              },
+              {
+                "time": "13:00",
+                "amount": "1/2 can",
+                "typeOfFood": "Wet",
+                "brand": "Brand X"
+              },
+              {
+                "time": "18:00",
+                "amount": "1/2 can",
+                "typeOfFood": "Wet",
+                "brand": "Brand X"
+              }
+            ]
+          },
+          "treats": [
+            {
+              "daily": true,
+              "typeOfTreat": {
+                "brand": "Brand Y",
+                "style": "Crunchy",
+                "amount": 5
+              }
+            }
+          ],
+          "toys": ["Laser pointer", "Feather wand"],
+          "relevantInformation": "Sensitive to loud noises",
+          "picture": "path/to/picture.jpg"
+        }
+      ],
+      "vetInfo": {
+        "vet": "Dr. Taylor",
+        "address": "789 Pet Clinic, Los Angeles, CA 90002",
+        "website": "http://www.petclinic.com",
+        "phone": "+1 (555) 876-6543"
+      },
+      "emergencyContact": {
+        "name": "Michael Green",
+        "relation": "Friend",
+        "phone": "+1 (555) 543-2109"
+      },
+      "_baseRate": 60,
+      "_lastVisit": "2023-04-01T00:00:00Z",
+      "_notes": "Very happy with the service"
+    },
+    {
+        "_id": "7wOwvj8i16XaqIn1sXtwe4o9tnO2",
+        "firstName": "Liam",
+        "lastName": "Walker",
+        "phone": "+1 (555) 456-7890",
+        "email": "liamwalker@gmail.com",
+        "otherContacts": [
+          {
+            "name": "Sophie Turner",
+            "phone": "+1 (555) 567-8901",
+            "email": "sophie.turner@example.com"
+          }
+        ],
+        "contactPreference": "WhatsApp",
+        "services": [
+          {
+            "status": "Pending",
+            "service": "Overnight Care",
+            "dates": {
+              "start": "2023-07-01T18:00:00Z",
+              "end": "2023-07-02T08:00:00Z"
+            },
+            "paymentAmount": 120,
+            "paymentMethod": "Zelle"
+          }
+        ],
+        "houseInstructions": "Feed the fish and water the garden plants.",
+        "address": {
+          "coordinates": [51.5074, -0.1278],
+          "addressLine": "789 River Rd, London, UK"
+        },
+        "pets": [
+          {
+            "name": "Charlie",
+            "typeOfPet": "Dog",
+            "breed": "Labrador",
+            "sex": "Male",
+            "yearOfBirth": 2019,
+            "microchipped": true,
+            "behavior": {
+              "specialNeeds": "None",
+              "routine": "Morning jog and evening walk",
+              "trainingRoutine": "Advanced obedience",
+              "fears": "Thunderstorms",
+              "notes": "Friendly with children"
+            },
+            "health": {
+              "isMedicated": false,
+              "medicationInfo": []
+            },
+            "allergies": {
+              "hasAllergies": false,
+              "typeOfAllergy": "",
+              "careInstructions": "",
+              "additionalInfo": ""
+            },
+            "weightInPounds": 70,
+            "size": "Large",
+            "lastVetVisit": "2023-05-20T00:00:00Z",
+            "vaccines": [
+              {
+                "date": "2023-04-15T00:00:00Z",
+                "typeOfVaccine": "Parvovirus"
+              }
+            ],
+            "food": {
+              "frequency": 2,
+              "foodAllergies": "None",
+              "restrictions": "No table scraps",
+              "notes": "Prefers dry food",
+              "meals": [
+                {
+                  "time": "08:00",
+                  "amount": "1.5 cups",
+                  "typeOfFood": "Dry",
+                  "brand": "Brand C"
+                },
+                {
+                  "time": "18:00",
+                  "amount": "1.5 cups",
+                  "typeOfFood": "Dry",
+                  "brand": "Brand C"
+                }
+              ]
+            },
+            "treats": [
+              {
+                "daily": true,
+                "typeOfTreat": {
+                  "brand": "Brand D",
+                  "style": "Soft",
+                  "amount": 3
+                }
+              }
+            ],
+            "walks": {
+              "needs": true,
+              "amountDaily": 2,
+              "distanceInMiles": 5,
+              "timeInMinutes": 90,
+              "route": "Park and neighborhood",
+              "preferences": "Likes to play fetch with a frisbee",
+              "habits": "Greets every dog he meets",
+              "details": "Avoid crowded areas"
+            },
+            "toys": ["Frisbee", "Rubber bone"],
+            "relevantInformation": "Has a sensitive stomach",
+            "picture": "path/to/picture.jpg"
+          },
+          {
+            "name": "Mittens",
+            "typeOfPet": "Cat",
+            "breed": "Maine Coon",
+            "sex": "Female",
+            "yearOfBirth": 2017,
+            "microchipped": false,
+            "behavior": {
+              "specialNeeds": "None",
+              "routine": "Daily brushing",
+              "trainingRoutine": "Litter trained",
+              "fears": "Vacuum cleaner",
+              "notes": "Loves climbing trees"
+            },
+            "health": {
+              "isMedicated": true,
+              "medicationInfo": [
+                {
+                  "typeOfMedication": "Flea treatment",
+                  "amount": "1 pipette",
+                  "time": "Monthly",
+                  "details": "Apply to back of neck"
+                }
+              ]
+            },
+            "allergies": {
+              "hasAllergies": false,
+              "typeOfAllergy": "",
+              "careInstructions": "",
+              "additionalInfo": ""
+            },
+            "weightInPounds": 15,
+            "size": "Medium",
+            "lastVetVisit": "2023-03-10T00:00:00Z",
+            "vaccines": [
+              {
+                "date": "2023-02-15T00:00:00Z",
+                "typeOfVaccine": "Feline Distemper"
+              }
+            ],
+            "food": {
+              "frequency": 3,
+              "foodAllergies": "None",
+              "restrictions": "No dairy",
+              "notes": "Prefers wet food",
+              "meals": [
+                {
+                  "time": "07:00",
+                  "amount": "1/4 can",
+                  "typeOfFood": "Wet",
+                  "brand": "Brand E"
+                },
+                {
+                  "time": "12:00",
+                  "amount": "1/4 can",
+                  "typeOfFood": "Wet",
+                  "brand": "Brand E"
+                },
+                {
+                  "time": "18:00",
+                  "amount": "1/4 can",
+                  "typeOfFood": "Wet",
+                  "brand": "Brand E"
+                }
+              ]
+            },
+            "treats": [
+              {
+                "daily": true,
+                "typeOfTreat": {
+                  "brand": "Brand F",
+                  "style": "Crunchy",
+                  "amount": 4
+                }
+              }
+            ],
+            "toys": ["Cat tree", "Laser pointer"],
+            "relevantInformation": "Prefers quiet environments",
+            "picture": "path/to/picture.jpg"
+          }
+        ],
+        "vetInfo": {
+          "vet": "Dr. Lewis",
+          "address": "123 Animal Care, London, UK",
+          "website": "http://www.animalcare.com",
+          "phone": "+44 20 1234 5678"
+        },
+        "emergencyContact": {
+          "name": "Emma Brown",
+          "relation": "Neighbor",
+          "phone": "+44 20 8765 4321"
+        },
+        "_baseRate": 55,
+        "_lastVisit": "2023-05-15T00:00:00Z",
+        "_notes": "Great service, very reliable"
+      },
+      {
+        "_id": "BRJCIg88AWYpwNylR7XJ5cZZKlx2",
+        "firstName": "Emma",
+        "lastName": "Johnson",
+        "phone": "+1 (555) 567-1234",
+        "email": "emmajohnson@gmail.com",
+        "otherContacts": [
+          {
+            "name": "Lucas Miller",
+            "phone": "+1 (555) 678-9101",
+            "email": "lucas.miller@example.com"
+          }
+        ],
+        "contactPreference": "Text Message",
+        "services": [
+          {
+            "status": "Current",
+            "service": "Dog Walks",
+            "dates": {
+              "start": "2023-06-10T07:00:00Z",
+              "end": "2023-06-10T08:00:00Z"
+            },
+            "paymentAmount": 25,
+            "paymentMethod": "Cash"
+          }
+        ],
+        "houseInstructions": "Make sure to lock the door and turn off the lights.",
+        "address": {
+          "coordinates": [37.7749, -122.4194],
+          "addressLine": "987 Market St, San Francisco, CA 94103"
+        },
+        "pets": [
+          {
+            "name": "Max",
+            "typeOfPet": "Dog",
+            "breed": "Beagle",
+            "sex": "Male",
+            "yearOfBirth": 2017,
+            "microchipped": true,
+            "behavior": {
+              "specialNeeds": "None",
+              "routine": "Morning walk and evening playtime",
+              "trainingRoutine": "Obedience training",
+              "fears": "Fireworks",
+              "notes": "Very friendly and energetic"
+            },
+            "health": {
+              "isMedicated": false,
+              "medicationInfo": []
+            },
+            "allergies": {
+              "hasAllergies": false,
+              "typeOfAllergy": "",
+              "careInstructions": "",
+              "additionalInfo": ""
+            },
+            "weightInPounds": 30,
+            "size": "Medium",
+            "lastVetVisit": "2023-04-15T00:00:00Z",
+            "vaccines": [
+              {
+                "date": "2023-01-20T00:00:00Z",
+                "typeOfVaccine": "Distemper"
+              }
+            ],
+            "food": {
+              "frequency": 2,
+              "foodAllergies": "None",
+              "restrictions": "No human food",
+              "notes": "Prefers wet food",
+              "meals": [
+                {
+                  "time": "08:00",
+                  "amount": "1 cup",
+                  "typeOfFood": "Wet",
+                  "brand": "Brand G"
+                },
+                {
+                  "time": "18:00",
+                  "amount": "1 cup",
+                  "typeOfFood": "Wet",
+                  "brand": "Brand G"
+                }
+              ]
+            },
+            "treats": [
+              {
+                "daily": true,
+                "typeOfTreat": {
+                  "brand": "Brand H",
+                  "style": "Chewy",
+                  "amount": 2
+                }
+              }
+            ],
+            "walks": {
+              "needs": true,
+              "amountDaily": 2,
+              "distanceInMiles": 2,
+              "timeInMinutes": 45,
+              "route": "Neighborhood park",
+              "preferences": "Likes to chase squirrels",
+              "habits": "Sniffs everything",
+              "details": "Avoid busy streets"
+            },
+            "toys": ["Chew toy", "Tennis ball"],
+            "relevantInformation": "Very social and loves attention",
+            "picture": "path/to/picture.jpg"
+          },
+          {
+            "name": "Coco",
+            "typeOfPet": "Cat",
+            "breed": "Persian",
+            "sex": "Female",
+            "yearOfBirth": 2018,
+            "microchipped": false,
+            "behavior": {
+              "specialNeeds": "Regular grooming",
+              "routine": "Daily brushing",
+              "trainingRoutine": "Litter trained",
+              "fears": "Loud noises",
+              "notes": "Prefers quiet environments"
+            },
+            "health": {
+              "isMedicated": true,
+              "medicationInfo": [
+                {
+                  "typeOfMedication": "Heartworm prevention",
+                  "amount": "1 tablet",
+                  "time": "Monthly",
+                  "details": "With food"
+                }
+              ]
+            },
+            "allergies": {
+              "hasAllergies": true,
+              "typeOfAllergy": "Dust",
+              "careInstructions": "Keep living area clean",
+              "additionalInfo": "Watch for sneezing"
+            },
+            "weightInPounds": 10,
+            "size": "Small",
+            "lastVetVisit": "2023-05-01T00:00:00Z",
+            "vaccines": [
+              {
+                "date": "2023-03-10T00:00:00Z",
+                "typeOfVaccine": "Feline Rhinotracheitis"
+              }
+            ],
+            "food": {
+              "frequency": 3,
+              "foodAllergies": "None",
+              "restrictions": "No dairy",
+              "notes": "Prefers dry food",
+              "meals": [
+                {
+                  "time": "07:00",
+                  "amount": "1/3 cup",
+                  "typeOfFood": "Dry",
+                  "brand": "Brand I"
+                },
+                {
+                  "time": "12:00",
+                  "amount": "1/3 cup",
+                  "typeOfFood": "Dry",
+                  "brand": "Brand I"
+                },
+                {
+                  "time": "18:00",
+                  "amount": "1/3 cup",
+                  "typeOfFood": "Dry",
+                  "brand": "Brand I"
+                }
+              ]
+            },
+            "treats": [
+              {
+                "daily": true,
+                "typeOfTreat": {
+                  "brand": "Brand J",
+                  "style": "Crunchy",
+                  "amount": 3
+                }
+              }
+            ],
+            "toys": ["Feather wand", "Catnip mouse"],
+            "relevantInformation": "Needs lots of cuddles",
+            "picture": "path/to/picture.jpg"
+          }
+        ],
+        "vetInfo": {
+          "vet": "Dr. Martinez",
+          "address": "123 Pet Care St, San Francisco, CA 94103",
+          "website": "http://www.petcare.com",
+          "phone": "+1 (555) 789-1234"
+        },
+        "emergencyContact": {
+          "name": "Oliver Davis",
+          "relation": "Friend",
+          "phone": "+1 (555) 234-5678"
+        },
+        "_baseRate": 45,
+        "_lastVisit": "2023-06-05T00:00:00Z",
+        "_notes": "Loves the service and very reliable"
+      },
+      {
+        "_id": "skwRW0iF6NXIBEihwcigI8ZCRMh1",
+        "firstName": "Ava",
+        "lastName": "Williams",
+        "phone": "+1 (555) 678-2345",
+        "email": "avawilliams@gmail.com",
+        "otherContacts": [
+          {
+            "name": "Ethan Roberts",
+            "phone": "+1 (555) 345-6789",
+            "email": "ethan.roberts@example.com"
+          }
+        ],
+        "contactPreference": "Phone Call",
+        "services": [
+          {
+            "status": "Completed",
+            "service": "Day Care",
+            "dates": {
+              "start": "2023-05-01T08:00:00Z",
+              "end": "2023-05-01T18:00:00Z"
+            },
+            "paymentAmount": 80,
+            "paymentMethod": "Card"
+          }
+        ],
+        "houseInstructions": "Please water the plants and take out the trash.",
+        "address": {
+          "coordinates": [41.8781, -87.6298],
+          "addressLine": "456 Oak St, Chicago, IL 60601"
+        },
+        "pets": [
+          {
+            "name": "Bella",
+            "typeOfPet": "Dog",
+            "breed": "Poodle",
+            "sex": "Female",
+            "yearOfBirth": 2015,
+            "microchipped": true,
+            "behavior": {
+              "specialNeeds": "None",
+              "routine": "Morning and evening walks",
+              "trainingRoutine": "Obedience training",
+              "fears": "Loud noises",
+              "notes": "Friendly and loves to play fetch"
+            },
+            "health": {
+              "isMedicated": false,
+              "medicationInfo": []
+            },
+            "allergies": {
+              "hasAllergies": true,
+              "typeOfAllergy": "Grain",
+              "careInstructions": "Grain-free diet only",
+              "additionalInfo": "Monitor for itching"
+            },
+            "weightInPounds": 40,
+            "size": "Medium",
+            "lastVetVisit": "2023-03-15T00:00:00Z",
+            "vaccines": [
+              {
+                "date": "2023-01-10T00:00:00Z",
+                "typeOfVaccine": "Rabies"
+              }
+            ],
+            "food": {
+              "frequency": 2,
+              "foodAllergies": "Grain",
+              "restrictions": "No grain",
+              "notes": "Prefers dry food",
+              "meals": [
+                {
+                  "time": "07:00",
+                  "amount": "1 cup",
+                  "typeOfFood": "Dry",
+                  "brand": "Brand K"
+                },
+                {
+                  "time": "19:00",
+                  "amount": "1 cup",
+                  "typeOfFood": "Dry",
+                  "brand": "Brand K"
+                }
+              ]
+            },
+            "treats": [
+              {
+                "daily": true,
+                "typeOfTreat": {
+                  "brand": "Brand L",
+                  "style": "Crunchy",
+                  "amount": 3
+                }
+              }
+            ],
+            "walks": {
+              "needs": true,
+              "amountDaily": 2,
+              "distanceInMiles": 2,
+              "timeInMinutes": 60,
+              "route": "Park and neighborhood",
+              "preferences": "Likes to play fetch",
+              "habits": "Sniffs everything",
+              "details": "Avoid crowded areas"
+            },
+            "toys": ["Ball", "Rope"],
+            "relevantInformation": "Very playful and energetic",
+            "picture": "path/to/picture.jpg"
+          },
+          {
+            "name": "Simba",
+            "typeOfPet": "Cat",
+            "breed": "Bengal",
+            "sex": "Male",
+            "yearOfBirth": 2016,
+            "microchipped": true,
+            "behavior": {
+              "specialNeeds": "None",
+              "routine": "Daily playtime",
+              "trainingRoutine": "Litter trained",
+              "fears": "Vacuum cleaner",
+              "notes": "Loves climbing and exploring"
+            },
+            "health": {
+              "isMedicated": true,
+              "medicationInfo": [
+                {
+                  "typeOfMedication": "Heartworm prevention",
+                  "amount": "1 tablet",
+                  "time": "Monthly",
+                  "details": "With food"
+                }
+              ]
+            },
+            "allergies": {
+              "hasAllergies": false,
+              "typeOfAllergy": "",
+              "careInstructions": "",
+              "additionalInfo": ""
+            },
+            "weightInPounds": 12,
+            "size": "Medium",
+            "lastVetVisit": "2023-04-01T00:00:00Z",
+            "vaccines": [
+              {
+                "date": "2023-02-20T00:00:00Z",
+                "typeOfVaccine": "Feline Leukemia"
+              }
+            ],
+            "food": {
+              "frequency": 2,
+              "foodAllergies": "None",
+              "restrictions": "No dairy",
+              "notes": "Prefers wet food",
+              "meals": [
+                {
+                  "time": "08:00",
+                  "amount": "1/2 can",
+                  "typeOfFood": "Wet",
+                  "brand": "Brand M"
+                },
+                {
+                  "time": "18:00",
+                  "amount": "1/2 can",
+                  "typeOfFood": "Wet",
+                  "brand": "Brand M"
+                }
+              ]
+            },
+            "treats": [
+              {
+                "daily": true,
+                "typeOfTreat": {
+                  "brand": "Brand N",
+                  "style": "Crunchy",
+                  "amount": 4
+                }
+              }
+            ],
+            "toys": ["Cat tree", "Laser pointer"],
+            "relevantInformation": "Very curious and active",
+            "picture": "path/to/picture.jpg"
+          }
+        ],
+        "vetInfo": {
+          "vet": "Dr. Adams",
+          "address": "789 Pet Care Ave, Chicago, IL 60602",
+          "website": "http://www.petcareclinic.com",
+          "phone": "+1 (555) 789-2345"
+        },
+        "emergencyContact": {
+          "name": "Sophia Johnson",
+          "relation": "Sister",
+          "phone": "+1 (555) 890-1234"
+        },
+        "_baseRate": 55,
+        "_lastVisit": "2023-05-15T00:00:00Z",
+        "_notes": "Very satisfied with the service, highly recommended"
+      }
+]
