@@ -8,7 +8,7 @@ router
 	.get(getPets)
 router
 	.route('/:userId')
-	.patch(createNewPet)
+	.put(createNewPet)
 
 router
 	.route('/onePet/:petId')
