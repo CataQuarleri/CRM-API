@@ -55,7 +55,12 @@ async function findOnePet (req, res, next){
 
 async function createNewPet (req, res, next){
     try{
+        const url = req.protocol + '://' + req.get('host')
+        let picture = req.file?.path ? req.file.destination + req.file.filename  : '/images/default.jpeg';
         let newPetData = req.body;
+        newPetData.picture = url + '/public/' + req.file.filename;
+        console.log("PICTURE", picture)
+        console.log("NEW PET DATA", newPetData)
     let userId = req.params.userId
     let petParent = await User.updateOne({_id: userId}, {$push: {pets: newPetData}})
     if(petParent.acknowledged){

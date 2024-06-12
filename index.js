@@ -3,6 +3,8 @@ import express from 'express';
 import 'dotenv/config'
 import url from 'url';
 import cors from 'cors'
+import multer from 'multer'
+import storage from './src/middlewares/filesHandling.js'
 
 
 import {connectToDb} from './data/conn.js'
@@ -32,6 +34,8 @@ app.use(express.urlencoded({ extended: true }));
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(join(__dirname, '/public')));
+const upload = multer({storage: storage});
+app.use(upload.single('picture'));
 await connectToDb()
 // await seedData()
 
